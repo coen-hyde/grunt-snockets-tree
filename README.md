@@ -2,7 +2,7 @@
 
 This grunt plugin will build a concat tree for use with grunt's concat task by scanning for require's with snockets.
 
-[Snockets](https://github.com/TrevorBurnham/snockets)
+[Snockets](https://github.com/pthrasher/snockets)
 
 ## Getting Started
 
