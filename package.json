@@ -1,0 +1,38 @@
+{
+  "name": "grunt-snockets-tree",
+  "description": "A grunt plugin for calculating a snockets concatination tree",
+  "version": "0.1.5",
+  "homepage": "https://github.com/coen-hyde/grunt-snockets-tree",
+  "author": {
+    "name": "Coen Hyde",
+    "url": "http://coenhyde.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/coen-hyde/grunt-snockets-tree.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/coen-hyde/grunt-snockets-tree/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "grunt.js",
+  "bin": "bin/grunt-snockets-tree",
+  "engines": {
+    "node": "*"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "snockets": "https://github.com/coen-hyde/snockets/tarball/sort"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-contrib-nodeunit": "~0.1.2"
+  },
+  "keywords": [
+    "gruntplugin"
+  ]
+}
