@@ -67,8 +67,6 @@ module.exports = function(grunt) {
         grunt.config.set('concat', existingConcat);
         grunt.config.set('min', existingMin);
 
-        console.log(grunt.config.get('min'));
-
         next();
       });
     }, done);
