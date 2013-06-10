@@ -13,11 +13,16 @@ module.exports = function(grunt) {
 
     var done = this.async()
       , task = this
-      , config = { concat: {}, min: {} };
+      , config = { concat: {} };
 
     var options = this.options({
       minify: false
     });
+
+
+    if (options.minify && typeof config[options.minify] === 'undefined') {
+      config[options.minify] = {};
+    }
 
     async.forEach(task.files, function (f, next) {
       // Only files, no directories
@@ -40,7 +45,7 @@ module.exports = function(grunt) {
           
           // Add to config.min object (if enabled)
           if (options.minify) {
-            config.min[filename] = {
+            config[options.minify][filename] = {
               src: config.concat[filename].dest,
               dest: f.dest
             };
@@ -60,12 +65,14 @@ module.exports = function(grunt) {
         grunt.verbose.writeln(require('util').inspect(config.min));
 
         var existingConcat = grunt.config.get('concat') || {};
-        var existingMin = grunt.config.get('min') || {};
         _.extend(existingConcat, config.concat);
-        _.extend(existingMin, config.min);
-        // Refresh concat and min config
         grunt.config.set('concat', existingConcat);
-        grunt.config.set('min', existingMin);
+
+        if (options.minify) {
+          var existingMin = grunt.config.get(options.minify) || {};
+          _.extend(existingMin, config[options.minify]);
+          grunt.config.set(options.minify, existingMin);
+        }
 
         next();
       });

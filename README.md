@@ -21,7 +21,7 @@ grunt.initConfig({
   snockets: {
     compile: {
       options: {
-        minify: false
+        minify: 'uglify'
       },
       src: 'app/app.js',
       dest: 'public/js/app.js'
@@ -36,4 +36,4 @@ grunt.initConfig({
 Type: `Boolean`
 Default: false
 
-Specifies if we should also build a minify tree for use with grunt's min task.
+Specifies the type of minification we should use. This will set a grunt config object with a key of this value.

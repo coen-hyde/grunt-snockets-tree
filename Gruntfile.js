@@ -9,7 +9,7 @@ module.exports = function(grunt) {
       },
       test2: {
         options: {
-          minify: true
+          minify: 'uglify'
         },
         src: 'test/fixtures/test2.js',
         dest: 'tmp/test.min.js'

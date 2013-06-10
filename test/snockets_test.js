@@ -40,7 +40,7 @@ exports.snockets = {
     test.deepEqual(grunt.config.get('concat'), expectedConcat, "Snockets did not build the expected concat config");
 
     // Ensure snockets didn't build the minify config
-    test.deepEqual(grunt.config.get('min'), expectedMin, "Snockets did not build the expected min config");
+    test.deepEqual(grunt.config.get('uglify'), expectedMin, "Snockets did not build the expected min config");
 
     test.done();
   }
