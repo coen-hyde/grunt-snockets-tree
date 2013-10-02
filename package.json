@@ -29,7 +29,7 @@
     "snockets": "https://github.com/coen-hyde/snockets/tarball/sort"
   },
   "devDependencies": {
-    "grunt": "~0.4.0",
+    "grunt": "~0.4.1",
     "grunt-contrib-nodeunit": "~0.1.2"
   }
 }
